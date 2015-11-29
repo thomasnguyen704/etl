@@ -23,6 +23,25 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    
+    /**
+    * Handle user login
+    *
+    */   
+    # Where should the user be redirected to if their login succeeds?
+    protected $redirectPath = '/';
+
+    # Where should the user be redirected to if their login fails?
+    protected $loginPath = '/login';
+
+    # Where should the user be redirected to after logging out?
+    protected $redirectAfterLogout = '/login';
+
+
+
+    /* NOTE: The following handles 1) data validation 2) record creation for users */
+    /* NOTE: Any changes below must have a coresponding change to file "User.php" */
+
     /**
      * Create a new authentication controller instance.
      *
@@ -35,6 +54,7 @@ class AuthController extends Controller
 
     /**
      * Get a validator for an incoming registration request.
+     * NOTE: Any changes below must have a coresponding change to "function create()"
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
@@ -43,6 +63,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'user' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -58,6 +79,7 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'user' => $data['user'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
