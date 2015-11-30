@@ -21,8 +21,9 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    protected $username = 'user';
     
     /**
     * Handle user login
@@ -31,7 +32,6 @@ class AuthController extends Controller
     # Where should the user be redirected to if their login succeeds?
     protected $redirectPath = '/';
 
-    
     # Where should the user be redirected to if their login fails?
     //protected $loginPath = '/login';
     protected $loginPath = '/home';
@@ -40,19 +40,20 @@ class AuthController extends Controller
     //protected $redirectAfterLogout = '/login';
     protected $redirectAfterLogout = '/home';
 
-
-    /* NOTE: The following handles 1) data validation 2) record creation for users */
-    /* NOTE: Any changes below must have a coresponding change to file "User.php" */
-
     /**
      * Create a new authentication controller instance.
      *
      * @return void
-     */
+    */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
     }
+
+
+
+    /* NOTE: The following handles 1) data validation 2) record creation for users */
+    /* NOTE: Any changes below must have a coresponding change to file "User.php" */
 
     /**
      * Get a validator for an incoming registration request.
@@ -60,7 +61,7 @@ class AuthController extends Controller
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
-     */
+    */
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -76,7 +77,7 @@ class AuthController extends Controller
      *
      * @param  array  $data
      * @return User
-     */
+    */
     protected function create(array $data)
     {
         return User::create([
