@@ -31,12 +31,14 @@ class AuthController extends Controller
     # Where should the user be redirected to if their login succeeds?
     protected $redirectPath = '/';
 
+    
     # Where should the user be redirected to if their login fails?
-    protected $loginPath = '/login';
+    //protected $loginPath = '/login';
+    protected $loginPath = '/home';
 
     # Where should the user be redirected to after logging out?
-    protected $redirectAfterLogout = '/login';
-
+    //protected $redirectAfterLogout = '/login';
+    protected $redirectAfterLogout = '/home';
 
 
     /* NOTE: The following handles 1) data validation 2) record creation for users */

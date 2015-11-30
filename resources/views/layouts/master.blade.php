@@ -28,8 +28,6 @@
 		<script type='text/javascript'> @yield('js') </script>
 		<script type="text/javascript" src="/tablesorter/js/jquery.tablesorter.js"></script>
 		<script type="text/javascript" src="/tablesorter/js/jquery.tablesorter.widgets.js"></script>
-		<script>
-			@yield('js')
-		</script>
+		@yield('js')
 	</body>
 </html>
