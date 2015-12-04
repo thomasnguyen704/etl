@@ -20,8 +20,31 @@
 	</head>
 	<body>
 		<div class="container">
+			@if(Auth::check())
+	        <nav class="navbar navbar-inverse navbar-fixed-top">
+	            <div class="container">
+	                <div class="navbar-header">
+	                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    </button>
+	                </div>
+	                <div id="navbar" class="collapse navbar-collapse">
+	                    <ul class="nav navbar-nav">
+	                        <li class="{{ Request::segment(1) === 'home' ? 'active' : null }}"><a href="/home">Home</a></li>
+	                        <li class="{{ Request::segment(1) === 'create' ? 'active' : null }}"><a href="/req/create">Create</a></li>
+	                        <li class="{{ Request::segment(1) === 'view' ? 'active' : null }}"><a href="/req/view">View</a></li>
+	                        <li><a href="/logout">Logout</a></li>
+	                    </ul>
+	                </div><!--/.nav-collapse -->
+	            </div>
+	        </nav>
+	        @endif
 			@yield('content')
 		</div>
+		
 		<!-- JavaScript -->
 		<script src='jquery.min.js' type='text/javascript'></script>
 		<script src='/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>

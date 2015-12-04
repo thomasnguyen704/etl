@@ -29,7 +29,7 @@ class AuthController extends Controller
     *
     */   
     # Where should the user be redirected to if their login succeeds?
-    protected $redirectPath = '/';
+    protected $redirectPath = '/home';
 
     # Where should the user be redirected to if their login fails?
     //protected $loginPath = '/login';

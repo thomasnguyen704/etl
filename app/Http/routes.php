@@ -14,27 +14,40 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
 Route::get('/home', function () {
     return view('index');
 });
 
-# Show login form
-Route::get('/login', 'Auth\AuthController@getLogin');
 
-# Process login form
-Route::post('/login', 'Auth\AuthController@postLogin');
-
-# Process logout
-Route::get('/logout', 'Auth\AuthController@getLogout');
-
-# Show registration form
-Route::get('/register', 'Auth\AuthController@getRegister');
-
-# Process registration form
-Route::post('/register', 'Auth\AuthController@postRegister');
+# Request routes
+Route::resource('/req', 'reqController');
+/* 
+Route::get('/req', 'reqController@index');
+Route::get('/req/create', 'reqController@create');
+Route::post('/req', 'reqController@store');
+Route::get('/req/{tag_id}', 'reqController@show');
+Route::get('/req/{tag_id}/edit', 'reqController@edit');
+Route::put('/req/{tag_id}', 'reqController@update');
+Route::delete('/req/{tag_id}', 'reqController@destroy');
+*/
 
 
-// debug and testing
+# Login handling
+Route::get('/login', 'Auth\AuthController@getLogin');           # Show login form
+Route::post('/login', 'Auth\AuthController@postLogin');         # Process login form
+Route::get('/logout', 'Auth\AuthController@getLogout');         # Process logout
+Route::get('/register', 'Auth\AuthController@getRegister');     # Show registration form
+Route::post('/register', 'Auth\AuthController@postRegister');   # Process registration form
+
+
+
+
+
+
+
+# debug and testing
 Route::get('/debug', function() {
 
     echo '<pre>';
@@ -71,7 +84,7 @@ Route::get('/debug', function() {
 });
 
 
-// confirm login
+# confirm login
 Route::get('/confirm-login-worked', function() {
 
     # You may access the authenticated user via the Auth facade
@@ -85,5 +98,4 @@ Route::get('/confirm-login-worked', function() {
     }
 
     return;
-
 });

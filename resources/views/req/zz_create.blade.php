@@ -1,30 +1,18 @@
-@extends('layouts.master')
-
-
-@section('head')
-@stop
-
-
-@section('title') 
-ETL Work Tracker
-@stop
-
-
-@section('content')
 <div class="container">
 	<form method="POST" action="/req">
 
 		<input type='hidden' name='_token' value='{{ csrf_token() }}'>
-
+	
 		<div class="row small">
 			<div class="col-sm-3">
 				<h5 class="page-header">About</h5>
+
 				<label for="start" class="control-label">Start Date</label>
 				<input type="date" class="form-control input-sm" id="start" placeholder="Start Date"><br>
-
+				
 				<label for="client" class="control-label">Client</label>
-				<input type="text" class="form-control input-sm" id="client" name="client" placeholder="Client"><br>
-
+				<input type="text" class="form-control input-sm" id="client" placeholder="Client"><br>
+				
 				<label for="department" class="control-label">Department</label>
 				<select class="form-control input-sm" id="department">
 					<option>Audit</option>
@@ -32,17 +20,17 @@ ETL Work Tracker
 					<option>Corporate</option>
 					<option>Enterprise Risk</option>
 				</select><br>
-
+				
 				<label for="user" class="control-label">Analyst</label>
-				<select class="form-control input-sm" id="user" name="user">
-					<option>c69052</option>
+				<select class="form-control input-sm" id="user">
+					<option>Cliff</option>
 					<option>Chad</option>
 					<option>James</option>
-					<option>Kirk</option>
+					<option>Kirk</option>					
 					<option>Lars</option>
 					<option>William</option>
 				</select><br>
-
+				
 				<label for="purpose" class="control-label">Purpose</label>
 				<textarea class="form-control" id="purpose" rows="6"></textarea>
 			</div>
@@ -64,7 +52,7 @@ ETL Work Tracker
 				<label for="notes" class="control-label">Notes</label>
 				<textarea class="form-control" id="notes" rows="6"></textarea>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-3">				
 				<h5 class="page-header">Code</h5>
 				<label for="code" class="control-label">Program or Query Code</label>
 				<textarea class="form-control" id="code" rows="20"></textarea>
@@ -82,14 +70,10 @@ ETL Work Tracker
 				
 				<label for="end" class="control-label">Close Date</label>
 				<input type="date" class="form-control input-sm" id="end" placeholder="Close Date"><br>
+				
+				<input class="btn btn-info btn-sm pull-right" type="submit" value="Submit">
 
-				<button type="submit" class="btn btn-info btn-sm pull-right">Submit</button>
 			</div>
-		</div><!--/.row-->
+		</div>
 	<form>
 </div>
-@stop
-
-
-@section('js')
-@stop

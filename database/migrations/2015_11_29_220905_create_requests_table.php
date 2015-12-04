@@ -26,27 +26,29 @@ class CreateRequestsTable extends Migration
             # About
             $table->date('start');
             $table->string('client');
-            $table->integer('user')->unsigned(); // Foregin Key
+            $table->string('department');
+            //$table->integer('user')->unsigned(); // Foregin Key
+            $table->string('user');
             $table->text('purpose');
 
             # Connection Information
             $table->string('server');
             $table->string('host');
             $table->string('port');
-            $table->string('type');
             $table->text('code');
 
             # Notes
             $table->binary('dictonary');
-            $table->binary('diagram');
-            $table->binary('other');
+            $table->text('notes');
 
             # Status
             $table->string('status');
             $table->date('end');
 
+            /*
             # Join
             $table->foreign('user')->references('id')->on('users');
+            */
         });
     }
 
