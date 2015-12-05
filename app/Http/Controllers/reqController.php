@@ -16,7 +16,11 @@ class reqController extends Controller
      */
     public function index()
     {
-        //
+        #load all requests
+        $requests = \etl\request::all();
+
+        return view('req.index')
+        ->with('requests',$requests);
     }
 
     /**
@@ -26,7 +30,11 @@ class reqController extends Controller
      */
     public function create()
     {
-        return view('req.create');
+        #load all users
+        $users = \etl\User::all();
+        
+        return view('req.create')
+        ->with('users', $users);
     }
 
     /**
@@ -39,9 +47,21 @@ class reqController extends Controller
     {
         # Enter into the database
         $req = new \etl\request();
+        $req->start = $request->start;
         $req->client = $request->client;
+        $req->department = $request->department;
+        $req->user = $request->user;
+        $req->purpose = $request->purpose;
+        $req->server_name = $request->server_name;
+        $req->host = $request->host;
+        $req->port = $request->port;
+        $req->code = $request->code;
+        $req->dictonary = $request->dictonary;
+        $req->notes = $request->notes;
+        $req->status = $request->status;
+        $req->end = $request->end;
         $req->save();
-        return redirect('/req/create');
+        return redirect('/req');
     }
 
     /**

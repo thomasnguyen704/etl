@@ -35,7 +35,7 @@
 	                    <ul class="nav navbar-nav">
 	                        <li class="{{ Request::segment(1) === 'home' ? 'active' : null }}"><a href="/home">Home</a></li>
 	                        <li class="{{ Request::segment(1) === 'create' ? 'active' : null }}"><a href="/req/create">Create</a></li>
-	                        <li class="{{ Request::segment(1) === 'view' ? 'active' : null }}"><a href="/req/view">View</a></li>
+	                        <li class="{{ Request::segment(1) === 'view' ? 'active' : null }}"><a href="/req">View</a></li>
 	                        <li><a href="/logout">Logout</a></li>
 	                    </ul>
 	                </div><!--/.nav-collapse -->
@@ -51,6 +51,7 @@
 		<script type='text/javascript'> @yield('js') </script>
 		<script type="text/javascript" src="/tablesorter/js/jquery.tablesorter.js"></script>
 		<script type="text/javascript" src="/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+		<script type="text/javascript" src="/quicksearch/jquery.quicksearch.min.js"></script>
 		@yield('js')
 	</body>
 </html>
