@@ -33,8 +33,7 @@ class reqController extends Controller
         #load all users
         $users = \etl\User::all();
         
-        return view('req.create')
-        ->with('users', $users);
+        return view('req.create')->with('users', $users);
     }
 
     /**
@@ -83,7 +82,18 @@ class reqController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        #load request
+        $request = \etl\request::find($id);
+
+        #load all users
+        $users = \etl\User::all();
+
+        return view('req.edit')
+            ->with([
+                'request' => $request,
+                'users' => $users,
+            ]);
     }
 
     /**

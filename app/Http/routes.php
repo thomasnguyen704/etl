@@ -14,15 +14,18 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/home', function () {
+Route::get('/home', ['as' => 'home', function()
+{
     return view('index');
-});
+}]);
 
 
 
 # Request routes
 Route::group(['middleware' => 'auth'], function () {
+    
     Route::resource('/req', 'reqController');
+    
     /*     
     Route::get('/req', 'reqController@index');
     Route::get('/req/create', 'reqController@create');

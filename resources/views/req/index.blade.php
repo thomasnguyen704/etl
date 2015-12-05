@@ -27,7 +27,7 @@ ETL Work Tracker: Create
 	<tbody>
 		@foreach($requests as $request)
 		<tr>
-			<td class="text-center"> <a href='/request/edit/{{$request['id']}}'> {{ $request['id'] }} </a></td>
+			<td class="text-center"> <a href='/req/{{$request['id']}}/edit'> {{ $request['id'] }} </a></td>
 			<td class="text-center"> {{ $request['status'] }} </td>			
 			<td class="text-center"> {{ $request->created_at->format('m/d/Y') }} </td>
 			<td class="text-center"> {{ $request['client'] }} </td>

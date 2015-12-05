@@ -34,8 +34,8 @@
 	                <div id="navbar" class="collapse navbar-collapse">
 	                    <ul class="nav navbar-nav">
 	                        <li class="{{ Request::segment(1) === 'home' ? 'active' : null }}"><a href="/home">Home</a></li>
-	                        <li class="{{ Request::segment(1) === 'create' ? 'active' : null }}"><a href="/req/create">Create</a></li>
-	                        <li class="{{ Request::segment(1) === 'view' ? 'active' : null }}"><a href="/req">View</a></li>
+	                        <li class="{{ Request::segment(2) === 'create' ? 'active' : null }}"><a href="/req/create">Create</a></li>
+	                        <li class="{{ Request::segment(2) === '' ? 'active' : null }}"><a href="/req">View</a></li>
 	                        <li><a href="/logout">Logout</a></li>
 	                    </ul>
 	                </div><!--/.nav-collapse -->
