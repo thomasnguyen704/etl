@@ -97,7 +97,7 @@ ETL Work Tracker: Edit
 @section('js')
 	<script>
 		$(function() {
-			$( ".datepicker" ).datepicker({dateFormat: 'yyyy-mm-dd'});
+			$( ".datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
 		});
 	</script>
 @stop
