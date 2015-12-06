@@ -39,7 +39,7 @@ ETL Work Tracker: Create
 				<div class="col-sm-3">
 					<h5 class="page-header">About</h5>
 					<label for="start" class="control-label">Start Date</label>
-					<input type="date" class="form-control input-sm datepicker" id="start" name="start" placeholder="Start Date"><br>
+					<input type="text" class="form-control input-sm datepicker" id="start" name="start" placeholder="Start Date"><br>
 
 					<label for="client" class="control-label">Client</label>
 					<input type="text" class="form-control input-sm" id="client" name="client" placeholder="Client"><br>
@@ -98,7 +98,7 @@ ETL Work Tracker: Create
 					</select><br>
 					
 					<label for="end" class="control-label">Close Date</label>
-					<input type="date" class="form-control input-sm datepicker" id="end" name="end" placeholder="Close Date"><br>
+					<input type="text" class="form-control input-sm datepicker" id="end" name="end" placeholder="Close Date"><br>
 					<div class="pull-right">
 						<a class="btn btn-warning btn-sm" href="/" role="button">Cancel New Request</a>
 						<button type="submit" class="btn btn-danger btn-sm">Save</button>
