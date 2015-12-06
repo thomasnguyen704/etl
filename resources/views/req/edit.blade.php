@@ -18,7 +18,7 @@ ETL Work Tracker: Edit
 				<div class="col-sm-3">
 					<h5 class="page-header">About</h5>
 					<label for="start" class="control-label">Start Date</label>
-					<input type="date" class="form-control input-sm" id="start" name="start" placeholder="Start Date" value="{{ $request->start }}"><br>
+					<input type="date" class="form-control input-sm datepicker" id="start" name="start" placeholder="Start Date" value="{{ $request->start }}"><br>
 
 					<label for="client" class="control-label">Client</label>
 					<input type="text" class="form-control input-sm" id="client" name="client" placeholder="Client" value="{{ $request->client }}"><br>
@@ -82,7 +82,7 @@ ETL Work Tracker: Edit
 					</select><br>
 					
 					<label for="end" class="control-label">Close Date</label>
-					<input type="date" class="form-control input-sm" id="end" name="end" placeholder="Close Date" value="{{ $request->end }}"><br>
+					<input type="date" class="form-control input-sm datepicker" id="end" name="end" placeholder="Close Date" value="{{ $request->end }}"><br>
 					<div class="pull-right">
 						<a class="btn btn-warning btn-sm" href="/req" role="button">No Changes - Return</a>
 						<button type="submit" class="btn btn-danger btn-sm">Save</button>
@@ -92,4 +92,12 @@ ETL Work Tracker: Edit
 		</form>
 	</div><!--/.row-->
 </div>
+@stop
+
+@section('js')
+	<script>
+		$(function() {
+			$( ".datepicker" ).datepicker();
+		});
+	</script>
 @stop
