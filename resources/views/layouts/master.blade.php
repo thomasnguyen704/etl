@@ -8,6 +8,8 @@
 		<title> @yield('title') | Thomas Nguyen </title>
 		<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="/tablesorter/css/theme.default.css" type="text/css">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
 		<style> 
 			* {
 				font-weight: 300 !important;
@@ -57,6 +59,7 @@
 		<!-- JavaScript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src='jquery.min.js' type='text/javascript'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		<script src='/bootstrap/js/bootstrap.min.js'></script>
 		<script src="/tablesorter/js/jquery.tablesorter.js"></script>
 		<script src="/tablesorter/js/jquery.tablesorter.widgets.js"></script>
