@@ -144,7 +144,6 @@ class reqController extends Controller
     }
 
 
-
     /**
     * Responds to requests to POST /books/edit
     */
@@ -170,4 +169,21 @@ class reqController extends Controller
     }
 
 
+    /**
+    * Performance reports
+    */
+    public function performance()
+    {
+        $performance = \etl\request::all();
+        
+        //dd($performance->lists('status','start','id'));
+
+        return view('performance')
+        ->with('start', $performance->lists('start'))
+        ->with('id', $performance->lists('id'));
+    }
 }
+
+
+
+

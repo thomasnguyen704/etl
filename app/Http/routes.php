@@ -17,10 +17,6 @@ Route::get('/', function () {
 Route::get('/home', ['as' => 'home', function(){
     return view('index');
 }]);
-Route::get('/performance', ['as' => 'performance', function(){
-    return view('performance');
-}]);
-
 
 
 # Request routes
@@ -40,13 +36,37 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-
 # Login handling
 Route::get('/login', 'Auth\AuthController@getLogin');           # Show login form
 Route::post('/login', 'Auth\AuthController@postLogin');         # Process login form
 Route::get('/logout', 'Auth\AuthController@getLogout');         # Process logout
 Route::get('/register', 'Auth\AuthController@getRegister');     # Show registration form
 Route::post('/register', 'Auth\AuthController@postRegister');   # Process registration form
+
+
+# Reports
+Route::get('performance', 'reqController@performance');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

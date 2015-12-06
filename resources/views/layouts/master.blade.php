@@ -49,11 +49,12 @@
 		
 		<!-- JavaScript -->
 		<script src='jquery.min.js' type='text/javascript'></script>
-		<script src='/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+		<script src='/bootstrap/js/bootstrap.min.js'></script>
 		<script src="/tablesorter/js/jquery.tablesorter.js"></script>
 		<script src="/tablesorter/js/jquery.tablesorter.widgets.js"></script>
 		<script src="/quicksearch/jquery.quicksearch.min.js"></script>
 		<script src="/highcharts/js/highcharts.js"></script>
+		<script src="Chart.min.js"></script>
 		@yield('js')
 	</body>
 </html>

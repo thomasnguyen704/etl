@@ -58,46 +58,16 @@ ETL Work Tracker
 @section('js')
 <script>
 $(function () {
+    var months = ["1","2","3","4","5","6","7",">7"];
+
     $('#myChart').highcharts({
-        chart: {
-            type: 'line'
-        },
-        title: {
-            text: 'Open Requests'
-        },
-        subtitle: {
-            text: '7 Day Cycle Time Goal'
-        },
-        xAxis: {
-            title: {text:'# Days'},
-            categories: [
-                '1',
-                '2',
-                '3',
-                '4',
-                '5',
-                '6',
-                '7',
-                '>7',
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: '# Requests'
-            }
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: '# Requests',
-            data: [20,15,10,5,3,2,1,1]
-        }]
+        chart: { type: 'line' },
+        title: { text: '# Open Requests' },
+        subtitle: { text: 'Goal: 7 Day Cycle Time' },
+        xAxis: { title: {text:'Day'}, categories: months, crosshair: true },
+        yAxis: { min: 0, title: { text: '# Requests' } },
+        plotOptions: { column: { pointPadding: 0.2, borderWidth: 0 } },
+        series: [{ name: '# Requests', data: [20,15,10,5,3,2,1,1] }]
     });
 });
 </script>

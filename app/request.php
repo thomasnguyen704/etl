@@ -4,8 +4,9 @@ namespace etl;
 
 use Illuminate\Database\Eloquent\Model;
 
-class request extends Model 
-{
+class request extends Model {
+	protected $table = 'requests';
+	
 	/*
     public function user() {
         # request belongs to User
