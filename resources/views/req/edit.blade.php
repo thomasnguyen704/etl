@@ -34,6 +34,7 @@ ETL Work Tracker: Edit
 
 					<label for="user" class="control-label">Analyst</label>
 					<select class="form-control input-sm" id="user" name="user">
+						<option selected label="Current: {{ $request->user }}">{{ $request->user }}</option>
 						@foreach($users as $user)
 						<option>{{ $user->name }}</option>
 						@endforeach
