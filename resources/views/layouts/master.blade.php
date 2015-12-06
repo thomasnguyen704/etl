@@ -13,7 +13,8 @@
 				font-weight: 300 !important;
 			}
 			body { 
-				padding-top: 65px; 
+				padding-top: 65px;
+				padding-bottom: 65px;
 			} 
 		</style>
 		@yield('head')
@@ -33,9 +34,10 @@
 	                </div>
 	                <div id="navbar" class="collapse navbar-collapse">
 	                    <ul class="nav navbar-nav">
-	                        <li class="{{ Request::segment(1) === 'home' ? 'active' : null }}"><a href="/home">Home</a></li>
-	                        <li class="{{ Request::segment(2) === 'create' ? 'active' : null }}"><a href="/req/create">Create</a></li>
-	                        <li class="{{ Request::segment(2) === '' ? 'active' : null }}"><a href="/req">View</a></li>
+	                        <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ URL::to('/') }}">Home</a></li>
+	                        <li class="{{ Request::is('req/create') ? 'active' : '' }}"><a href="{{ URL::to('/req/create') }}">Create</a></li>
+	                        <li class="{{ Request::is('req') ? 'active' : '' }}"><a href="{{ URL::to('/req') }}">View</a></li>
+	                        <li class="{{ Request::is('performance') ? 'active' : '' }}"><a href="{{ URL::to('/performance') }}">Performance</a></li>
 	                        <li><a href="/logout">Logout</a></li>
 	                    </ul>
 	                </div><!--/.nav-collapse -->
@@ -48,10 +50,10 @@
 		<!-- JavaScript -->
 		<script src='jquery.min.js' type='text/javascript'></script>
 		<script src='/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
-		<script type='text/javascript'> @yield('js') </script>
-		<script type="text/javascript" src="/tablesorter/js/jquery.tablesorter.js"></script>
-		<script type="text/javascript" src="/tablesorter/js/jquery.tablesorter.widgets.js"></script>
-		<script type="text/javascript" src="/quicksearch/jquery.quicksearch.min.js"></script>
+		<script src="/tablesorter/js/jquery.tablesorter.js"></script>
+		<script src="/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+		<script src="/quicksearch/jquery.quicksearch.min.js"></script>
+		<script src="/highcharts/js/highcharts.js"></script>
 		@yield('js')
 	</body>
 </html>

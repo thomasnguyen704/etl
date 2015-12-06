@@ -11,51 +11,20 @@ ETL Work Tracker
 @section('content')
 
 @if(Auth::check())
-    <h1 class="page-header"> ETL Work Tracker </h1>	
-    
-    <!-- tablesorter example -->
-    <table id="myTable" class="table tablesorter">
-        <thead>
-            <tr class='active'>
-                <th>Last Name</th>
-                <th>First Name</th>
-                <th>Email</th>
-                <th>Due</th>
-                <th>Web Site</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Smith</td>
-                <td>John</td>
-                <td>jsmith@gmail.com</td>
-                <td>$50.00</td>
-                <td>http://www.jsmith.com</td>
-            </tr>
-            <tr>
-                <td>Bach</td>
-                <td>Frank</td>
-                <td>fbach@yahoo.com</td>
-                <td>$50.00</td>
-                <td>http://www.frank.com</td>
-            </tr>
-            <tr>
-                <td>Doe</td>
-                <td>Jason</td>
-                <td>jdoe@hotmail.com</td>
-                <td>$100.00</td>
-                <td>http://www.jdoe.com</td>
-            </tr>
-            <tr>
-                <td>Conway</td>
-                <td>Tim</td>
-                <td>tconway@earthlink.net</td>
-                <td>$50.00</td>
-                <td>http://www.timconway.com</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <h1 class="page-header"> ETL Work Tracker </h1> 
+    <div class="row">
+        <div class="col-sm-4">
+            <p class="lead"> <a href="/req/create">Create</a> <br>
+            <span class="small">Start a new ETL request where you can track workflow and documentation</span>
+            </p>
+            <p class="lead"> <a href="/req">View and Edit</a> <br>
+            <span class="small">View and search ETL requests with key attributes and docmentation</span>
+            </p>
+        </div>
+        <div class="col-sm-8 well">
+            <div id="myChart"></div>
+        </div>
+    </div>
 
     @else
     <div class="jumbotron text-center">
@@ -86,21 +55,60 @@ ETL Work Tracker
 @stop<!-- end content -->
 
 
-
-
-
 @section('js')
 <script>
-    $(function() {
-        // call the tablesorter plugin
-        $("#myTable").tablesorter({
-            widthFixed : true,
-            widgets: ["filter"],
-            widgetOptions : {
-            filter_reset : '.reset',
-            filter_searchFiltered : false // set to false because it is difficult to determine if a filtered row is already showing when looking at ranges
+$(function () {
+    $('#myChart').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Open Requests'
+        },
+        subtitle: {
+            text: '7 Day Cycle Time Goal'
+        },
+        xAxis: {
+            title: {text:'# Days'},
+            categories: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5',
+                '6',
+                '7',
+                '>7',
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '# Requests'
             }
-        });
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '# Requests',
+            data: [20,15,10,5,3,2,1,1]
+        }]
     });
+});
 </script>
+
 @stop
+
+
+
+
+
+
+
+
+

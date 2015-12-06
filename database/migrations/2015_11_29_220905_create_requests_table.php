@@ -33,7 +33,7 @@ class CreateRequestsTable extends Migration
             $table->string('host');
             $table->string('port');
             $table->text('code');
-            $table->string('dictonary');
+            $table->text('dictonary');
             $table->text('notes');
             $table->string('status');
             $table->date('end');

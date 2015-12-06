@@ -14,9 +14,11 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/home', ['as' => 'home', function()
-{
+Route::get('/home', ['as' => 'home', function(){
     return view('index');
+}]);
+Route::get('/performance', ['as' => 'performance', function(){
+    return view('performance');
 }]);
 
 
@@ -25,15 +27,15 @@ Route::get('/home', ['as' => 'home', function()
 Route::group(['middleware' => 'auth'], function () {
     
     Route::resource('/req', 'reqController');
-    
+    Route::post('/req/edit', 'reqController@postEdit'); 
     /*     
     Route::get('/req', 'reqController@index');
     Route::get('/req/create', 'reqController@create');
     Route::post('/req', 'reqController@store');
-    Route::get('/req/{tag_id}', 'reqController@show');
-    Route::get('/req/{tag_id}/edit', 'reqController@edit');
-    Route::put('/req/{tag_id}', 'reqController@update');
-    Route::delete('/req/{tag_id}', 'reqController@destroy');
+    Route::get('/req/{id}', 'reqController@show');
+    Route::get('/req/{id}/edit', 'reqController@edit');
+    Route::put('/req/{id}', 'reqController@update');
+    Route::delete('/req/{id}', 'reqController@destroy');
     */
 });
 
