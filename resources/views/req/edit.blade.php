@@ -82,8 +82,10 @@ ETL Work Tracker: Edit
 					
 					<label for="end" class="control-label">Close Date</label>
 					<input type="date" class="form-control input-sm" id="end" name="end" placeholder="Close Date" value="{{ $request->end }}"><br>
-					
-					<button type="submit" class="btn btn-danger btn-sm pull-right">Save</button>
+					<div class="pull-right">
+						<a class="btn btn-warning btn-sm" href="/req" role="button">No Changes - Return</a>
+						<button type="submit" class="btn btn-danger btn-sm">Save</button>
+					</div>
 				</div>
 			</div>
 		</form>

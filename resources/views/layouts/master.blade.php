@@ -20,6 +20,13 @@
 		@yield('head')
 	</head>
 	<body>
+		@if(\Session::has('flash_message'))
+			<div class='container'>
+				<div class="alert alert-danger" role="alert">
+					{{ \Session::get('flash_message') }}
+				</div>
+			</div>
+		@endif
 		<div class="container">
 			@if(Auth::check())
 	        <nav class="navbar navbar-inverse navbar-fixed-top">

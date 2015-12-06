@@ -46,6 +46,12 @@ class reqController extends Controller
     */
     public function store(Request $request)
     {
+
+        // Validate the request data
+        $this->validate($request, [
+            'client' => 'required',
+        ]);
+
         # Enter into the database
         $req = new \etl\request();
 
@@ -62,8 +68,8 @@ class reqController extends Controller
         $req->notes = $request->notes;
         $req->status = $request->status;
         $req->end = $request->end;
-        
         $req->save();
+        \Session::flash('flash_message','The request has been submitted.');
         return redirect('/req');
     }
 
@@ -165,6 +171,7 @@ class reqController extends Controller
         $req->end = $request->end;
         $req->save();
 
+        \Session::flash('flash_message','Your changes were saved.');
         return redirect('/req');
     }
 

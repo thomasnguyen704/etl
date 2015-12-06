@@ -11,6 +11,23 @@ ETL Work Tracker: Create
 
 
 @section('content')
+
+
+<div class="row">
+@if(count($errors) > 0)
+    <ul>
+        @foreach ($errors->all() as $error)
+		<div class="alert alert-warning" role="alert">
+			<ul class="list-inline">
+				<li>{{ $error }}</li>
+			</ul>			
+		</div>
+        @endforeach
+    </ul>
+@endif
+</div>
+
+
 <div class="container">
 	<div class="row">
 		<form method="POST" action="/req">
@@ -29,6 +46,7 @@ ETL Work Tracker: Create
 
 					<label for="department" class="control-label">Department</label>
 					<select class="form-control input-sm" id="department" name="department">
+						<option selected>Unassigned</option>
 						<option>Audit</option>
 						<option>Branch</option>
 						<option>Corporate</option>
@@ -81,8 +99,10 @@ ETL Work Tracker: Create
 					
 					<label for="end" class="control-label">Close Date</label>
 					<input type="date" class="form-control input-sm" id="end" name="end" placeholder="Close Date"><br>
-
-					<button type="submit" class="btn btn-danger btn-sm pull-right">Save</button>
+					<div class="pull-right">
+						<a class="btn btn-warning btn-sm" href="/" role="button">Cancel New Request</a>
+						<button type="submit" class="btn btn-danger btn-sm">Save</button>
+					</div>
 				</div>
 			</div>
 		</form>
