@@ -56,7 +56,7 @@ ETL Work Tracker: Create
 					<label for="user" class="control-label">Analyst</label>
 					<select class="form-control input-sm" id="user" name="user">
 						@foreach($users as $user)
-						<option selected="Unassigned">{{ $user->name }}</option>
+						<option>{{ $user->name }}</option>
 						@endforeach
 					</select><br>
 
