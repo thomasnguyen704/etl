@@ -39,10 +39,10 @@ ETL Work Tracker: Create
 				<div class="col-sm-3">
 					<h5 class="page-header">About</h5>
 					<label for="start" class="control-label">Start Date</label>
-					<input type="text" class="form-control input-sm datepicker" id="start" name="start" placeholder="Start Date"><br>
+					<input type="text" class="form-control input-sm datepicker" id="start" name="start" placeholder="Start Date" required="required"><br>
 
 					<label for="client" class="control-label">Client</label>
-					<input type="text" class="form-control input-sm" id="client" name="client" placeholder="Client"><br>
+					<input type="text" class="form-control input-sm" id="client" name="client" placeholder="Client" required="required"><br>
 
 					<label for="department" class="control-label">Department</label>
 					<select class="form-control input-sm" id="department" name="department">
