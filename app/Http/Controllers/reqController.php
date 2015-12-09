@@ -32,7 +32,9 @@ class reqController extends Controller
     public function create()
     {
         #load all users
-        $users = \etl\User::all();
+        //$users = \etl\User::all();
+        $users = \etl\User::all()->orderBy('name','DESC')->get();
+
 
         return view('req.create')->with('users', $users);
     }
