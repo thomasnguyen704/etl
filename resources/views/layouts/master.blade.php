@@ -22,6 +22,7 @@
 		@yield('head')
 	</head>
 	<body>
+
 		@if(\Session::has('flash_message'))
 			<div class='container'>
 				<div class="alert alert-danger" role="alert">
@@ -29,7 +30,9 @@
 				</div>
 			</div>
 		@endif
+
 		<div class="container">
+
 			@if(Auth::check())
 	        <nav class="navbar navbar-inverse navbar-fixed-top">
 	            <div class="container">
@@ -47,8 +50,9 @@
 	                        <li class="{{ Request::is('req/create') ? 'active' : '' }}"><a href="{{ URL::to('/req/create') }}">Create</a></li>
 	                        <li class="{{ Request::is('req') ? 'active' : '' }}"><a href="{{ URL::to('/req') }}">View</a></li>
 	                        <li class="{{ Request::is('performance') ? 'active' : '' }}"><a href="{{ URL::to('/performance') }}">Performance</a></li>
-	                        <li><a href="/logout">Logout</a></li>
+	                        <li><a href="/logout"> Logout </a></li>
 	                    </ul>
+						<p class="navbar-text navbar-right">Signed in as {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</a></p>
 	                </div><!--/.nav-collapse -->
 	            </div>
 	        </nav>
