@@ -50,9 +50,11 @@
 	                        <li class="{{ Request::is('req/create') ? 'active' : '' }}"><a href="{{ URL::to('/req/create') }}">Create</a></li>
 	                        <li class="{{ Request::is('req') ? 'active' : '' }}"><a href="{{ URL::to('/req') }}">View</a></li>
 	                        <li class="{{ Request::is('performance') ? 'active' : '' }}"><a href="{{ URL::to('/performance') }}">Performance</a></li>
-	                        <li><a href="/logout"> Logout </a></li>
 	                    </ul>
-						<p class="navbar-text navbar-right">Signed in as {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</a></p>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="navbar-text">Signed in as {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}</li>
+							<li><a href="/logout"> Logout </a></li>
+						</ul>
 	                </div><!--/.nav-collapse -->
 	            </div>
 	        </nav>
