@@ -99,7 +99,9 @@ class reqController extends Controller
         $request = \etl\request::find($id);
 
         #load all users
-        $users = \etl\User::all();
+        //$users = \etl\User::all();
+        $users = \etl\User::orderBy('name','ASC')->get();
+
 
         return view('req.edit')
             ->with([
